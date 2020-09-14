@@ -7,9 +7,9 @@ import java.math.BigDecimal;
  */
 public class PatientForm {
     private String id;
-    private String description;
-    private BigDecimal price;
-    private String imageUrl;
+    private String Name;
+    private BigDecimal Age;
+    private String Gender;
 
     public String getId() {
         return id;
@@ -19,27 +19,27 @@ public class PatientForm {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return Name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public BigDecimal getAge() {
+        return Age;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setAge(BigDecimal Age) {
+        this.Age = Age;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getGender() {
+        return Gender;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setGender(String Gender) {
+        this.Gender = Gender;
     }
 }
