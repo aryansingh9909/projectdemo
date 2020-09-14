@@ -21,12 +21,13 @@ import javax.validation.Valid;
 public class PatientController {
     private PatientService patientService;
 
-    private PatientToParientForm patientToPatientForm;
+   /* private PatientToParientForm patientToPatientForm;
 
     @Autowired
     public void setPatientToPatientForm(PatientToPatientForm patientToPatientForm) {
         this.patientToPatientForm = patientToPatientForm;
     }
+    */
 
     @Autowired
     public void setPatientService(PatientService patientService) {

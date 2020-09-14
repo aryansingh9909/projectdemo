@@ -17,14 +17,14 @@ import java.util.List;
 public class PatientServiceImpl implements PatientService {
 
     private PatientRepository patientRepository;
-    private PatientFormToPatient patientFormToPatient;
+   // private PatientFormToPatient patientFormToPatient;
 
-    @Autowired
+   /* @Autowired
     public PatientServiceImpl(PatientRepository patientRepository, PatientFormToPatient patientFormToPatient) {
         this.patientRepository = patientRepository;
         this.patienttFormToPatient = patientFormToPatient;
     }
-
+*/
 
     @Override
     public List<Patient> listAll() {
@@ -48,12 +48,18 @@ public class PatientServiceImpl implements PatientService {
     public void delete(String id) {
         patientRepository.deleteById(id);
     }
-
+/*
     @Override
     public Patient saveOrUpdatePatientForm(PatientForm patientForm) {
         Patient savedPatient = saveOrUpdate(patientFormToPatient.convert(patientForm));
 
         System.out.println("Saved Patient Id: " + savedPatient.getId());
         return savedPatient;
+    }*/
+
+    @Override
+    public Patient saveOrUpdateProductForm(PatientForm patientForm) {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
