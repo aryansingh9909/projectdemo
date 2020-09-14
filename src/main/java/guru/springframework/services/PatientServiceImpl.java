@@ -28,7 +28,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public List<Patient> listAll() {
-        List<Patient> patints = new ArrayList<>();
+        List<Patient> patients = new ArrayList<>();
         patientRepository.findAll().forEach(patients::add); //fun with Java 8
         return patients;
     }
