@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 /**
  * Created by jt on 1/10/17.
  */
-@Document
+@Document(collection = "patient")
 public class Patient {
     @Id
     private ObjectId _id;
