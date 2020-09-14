@@ -1,6 +1,6 @@
 package guru.springframework.repositories;
 
-import guru.springframework.domain.Product;
+import guru.springframework.domain.Patient;
 import org.springframework.data.repository.CrudRepository;
 
 /**
