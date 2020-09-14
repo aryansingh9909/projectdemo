@@ -18,5 +18,5 @@ public interface PatientService {
 
     void delete(String id);
 
-    Patient saveOrUpdateProductForm(PatientForm patientForm);
+    Patient saveOrUpdatePatientForm(PatientForm patientForm);
 }
