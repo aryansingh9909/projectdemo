@@ -1,0 +1,25 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="Patiensearch">
+  <form th:action="@{/Search}" >
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+      </div>
+    </div>
+    <div class="row">
+      <button type="button button1">Search</button>
+    </div>
+    <div class="row">
+      <A HREF="/patient/list">Home</A>
+    </div>
+  </form>
+</div>
+</body>
+</html>

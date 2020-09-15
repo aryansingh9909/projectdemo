@@ -21,16 +21,15 @@ public class PatientServiceImpl implements PatientService {
 
     @Autowired
     public PatientServiceImpl(PatientRepository patientRepository, PatientFormToPatient patientFormToPatient) {
-    //    public PatientServiceImpl(PatientRepository patientRepository) {
-       this.patientRepository = patientRepository;
+        // public PatientServiceImpl(PatientRepository patientRepository) {
+        this.patientRepository = patientRepository;
         this.patientFormToPatient = patientFormToPatient;
     }
-
 
     @Override
     public List<Patient> listAll() {
         List<Patient> patients = new ArrayList<>();
-        patientRepository.findAll().forEach(patients::add); //fun with Java 8
+        patientRepository.findAll().forEach(patients::add); // fun with Java 8
         return patients;
     }
 
@@ -58,7 +57,12 @@ public class PatientServiceImpl implements PatientService {
         return savedPatient;
     }
 
-   
+    @Override
+    public List<Patient> getByName(String name) {
+        List<Patient> patients = new ArrayList<>();
+        patients = patientRepository.findByName(name); 
+        return patients;
+    }
 
-   
+      
 }

@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 /**
@@ -50,6 +53,9 @@ public class PatientController {
         model.addAttribute("patient", patientService.getById(id));
         return "patient/show";
     }
+
+    
+
 /*
     @RequestMapping("patient/edit/{id}")
     public String edit(@PathVariable String id, Model model){
@@ -64,6 +70,22 @@ public class PatientController {
     public String newPatient(Model model){
         model.addAttribute("patientForm", new PatientForm());
         return "patient/patientform";
+    }
+
+    /*@RequestMapping("/patient/search")
+    public String newSearch(){
+        //model.addAttribute("searchName", new PatientForm());
+        return "patient/search";
+    }*/
+
+    @RequestMapping(value = "/patient/search")
+    public String searchName(){
+        System.out.println("Hi search");
+        //       Patient savedPatient = patientService.saveOrUpdatePatientForm(patientForm);
+        /*List<Patient> searched = new ArrayList<>();
+        searched = patientService.getByName("aryan");
+        System.out.println(searched);*/
+        return "/patient/search";
     }
 
     @RequestMapping(value = "/patient", method = RequestMethod.POST)
