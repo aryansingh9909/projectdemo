@@ -16,12 +16,12 @@ public class PatientFormToPatient implements Converter<PatientForm, Patient> {
     @Override
     public Patient convert(PatientForm patientForm) {
         Patient patient = new Patient();
-        /*if (patientForm.getId() != null  && !StringUtils.isEmpty(patientForm.getId())) {
+        if (patientForm.getId() != null  && !StringUtils.isEmpty(patientForm.getId())) {
             patient.setId(new ObjectId(patientForm.getId()));
         }
-        patient.setDescription(patientForm.getDescription());
-        patient.setPrice(patientForm.getPrice());
-        //patient.setImageUrl(productForm.getImageUrl());*/
+        patient.setName(patientForm.getName());
+        patient.setAge(patientForm.getAge());
+        patient.setGender(patientForm.getGender());
         return patient;
     }
 }

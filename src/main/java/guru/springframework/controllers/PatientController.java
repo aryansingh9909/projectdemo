@@ -41,16 +41,16 @@ public class PatientController {
 
     @RequestMapping({"/patient/list", "/patient"})
     public String listPatient(Model model){
-        model.addAttribute("patient", patientService.listAll());
+        model.addAttribute("patients", patientService.listAll());
         return "patient/list";
     }
 
-  /*  @RequestMapping("/patient/show/{id}")
+    @RequestMapping("/patient/show/{id}")
     public String getPatient(@PathVariable String id, Model model){
-        model.addAttribute("product", patientService.getById(id));
+        model.addAttribute("patient", patientService.getById(id));
         return "patient/show";
     }
-
+/*
     @RequestMapping("patient/edit/{id}")
     public String edit(@PathVariable String id, Model model){
         Patient patient = patientService.getById(id);
@@ -58,7 +58,7 @@ public class PatientController {
 
         model.addAttribute("patientForm", patientForm);
         return "patient/patientform";
-    }
+    }*/
 
     @RequestMapping("/patient/new")
     public String newPatient(Model model){
@@ -73,11 +73,11 @@ public class PatientController {
             return "patient/patientform";
         }
 
-        Patient savedPatient = patientService.saveOrUpdateProductForm(productForm);
+        Patient savedPatient = patientService.saveOrUpdatePatientForm(patientForm);
 
-        return "redirect:/product/show/" + savedProduct.getId();
+        return "redirect:/patient/show/" + savedPatient.getId();
     }
-
+/*
     @RequestMapping("/product/delete/{id}")
     public String delete(@PathVariable String id){
         productService.delete(id);
