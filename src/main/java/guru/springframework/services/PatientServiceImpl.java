@@ -60,7 +60,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public List<Patient> getByName(String name) {
         List<Patient> patients = new ArrayList<>();
-        patients = patientRepository.findByName(name); 
+        patients = patientRepository.getByName(name); 
         return patients;
     }
 
