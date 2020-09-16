@@ -3,27 +3,33 @@
 <head>
     <title>Web Application for Patient </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/patientform.css"/>
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 600px;
+        height: 100px;
+    }
+    table, th, td {
+        border: 1px solid black;
+        
+    }
+    th {
+        text-align: left;
+    }
 
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen"/>
-
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
-
-    <link href="../../static/css/spring-core.css"
-          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
-</head>
+    </style>
+  
 <body>
 <div class="container">
     <div th:if="${not #lists.isEmpty(patients)}">
-        <h2>Search List</h2>
-        <table class="table table-striped">
+        <h2 style="text-align:center">Search List</h2>
+        <table class="tabl" border="1" align="center">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
+                <th style="text-align:center">Id</th>
+                <th style="text-align:center">Name</th>
+                <th style="text-align:center">Age</th>
+                <th style="text-align:center">Gender</th>
                
             </tr>
             <tr th:each="patient : ${patients}">
@@ -35,7 +41,7 @@
             </tr>
         </table>
     </div>
-    <div class="row">
+    <div class="links">
         <div class="col-sm-3">
             <a href="/patient/new">New Patient</a>
         </div>

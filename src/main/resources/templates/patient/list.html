@@ -6,7 +6,7 @@
     <style>
     table {
         border-collapse: collapse;
-        width: 400px;
+        width: 600px;
         height: 100px;
     }
     table, th, td {
@@ -26,10 +26,10 @@
         <h2 style="text-align:center">Patient List</h2>
         <table class="tabl" border="1" align="center">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
+                <th style="text-align:center">Id</th>
+                <th style="text-align:center">Name</th>
+                <th style="text-align:center">Age</th>
+                <th style="text-align:center">Gender</th>
                
             </tr>
             <tr th:each="patient : ${patients}">
