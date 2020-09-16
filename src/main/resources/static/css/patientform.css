@@ -22,6 +22,7 @@ label {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+  text-align: center;
 }
 
 
@@ -60,4 +61,7 @@ label {
 .btn {
     text-align: center;
     padding-top: 10px;
+}
+.links {
+    text-align: center;
 }

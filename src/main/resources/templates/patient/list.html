@@ -3,14 +3,28 @@
 <head>
     <title>Web Application for Patient </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 400px;
+        height: 100px;
+    }
+    table, th, td {
+        border: 1px solid black;
+        
+    }
+    th {
+        text-align: left;
+    }
 
-
+    </style>
+ 
 </head>
 <body>
 <div class="patientlist">
     <div th:if="${not #lists.isEmpty(patients)}">
         <h2 style="text-align:center">Patient List</h2>
-        <table class="table table-striped">
+        <table class="tabl" border="1" align="center">
             <tr>
                 <th>Id</th>
                 <th>Name</th>
