@@ -13,17 +13,12 @@ label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
-.patiententry {
+.container {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
 }
-.patientlist {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  text-align: center;
-}
+
 
 
 /* Floating column for labels: 25% width */
