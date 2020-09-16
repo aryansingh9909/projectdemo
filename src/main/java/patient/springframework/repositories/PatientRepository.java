@@ -1,6 +1,6 @@
-package guru.springframework.repositories;
+package patient.springframework.repositories;
 
-import guru.springframework.domain.Patient;
+import patient.springframework.domain.Patient;
 
 import java.util.List;
 

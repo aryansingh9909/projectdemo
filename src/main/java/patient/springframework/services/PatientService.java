@@ -1,13 +1,11 @@
-package guru.springframework.services;
+package patient.springframework.services;
 
-import guru.springframework.commands.PatientForm;
-import guru.springframework.domain.Patient;
+import patient.springframework.commands.PatientForm;
+import patient.springframework.domain.Patient;
 
 import java.util.List;
 
-/**
- * Created by jt on 1/10/17.
- */
+
 public interface PatientService {
 
     List<Patient> listAll();

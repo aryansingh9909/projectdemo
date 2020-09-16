@@ -1,18 +1,16 @@
-package guru.springframework.services;
+package patient.springframework.services;
 
-import guru.springframework.commands.PatientForm;
-import guru.springframework.converters.PatientFormToPatient;
-import guru.springframework.domain.Patient;
-import guru.springframework.repositories.PatientRepository;
+import patient.springframework.commands.PatientForm;
+import patient.springframework.converters.PatientFormToPatient;
+import patient.springframework.domain.Patient;
+import patient.springframework.repositories.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by jt on 1/10/17.
- */
+
 @Service
 public class PatientServiceImpl implements PatientService {
 
@@ -21,7 +19,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Autowired
     public PatientServiceImpl(PatientRepository patientRepository, PatientFormToPatient patientFormToPatient) {
-        // public PatientServiceImpl(PatientRepository patientRepository) {
+       
         this.patientRepository = patientRepository;
         this.patientFormToPatient = patientFormToPatient;
     }
@@ -29,7 +27,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public List<Patient> listAll() {
         List<Patient> patients = new ArrayList<>();
-        patientRepository.findAll().forEach(patients::add); // fun with Java 8
+        patientRepository.findAll().forEach(patients::add); 
         return patients;
     }
 

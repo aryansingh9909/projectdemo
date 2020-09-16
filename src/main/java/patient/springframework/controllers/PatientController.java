@@ -1,10 +1,10 @@
-package guru.springframework.controllers;
+package patient.springframework.controllers;
 
-import guru.springframework.commands.PatientForm;
-//import guru.springframework.converters.PatientToPatientForm;
-import guru.springframework.domain.Patient;
-import guru.springframework.repositories.PatientRepository;
-import guru.springframework.services.PatientService;
+import patient.springframework.commands.PatientForm;
+
+import patient.springframework.domain.Patient;
+
+import patient.springframework.services.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,27 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.validation.Valid;
 
-import com.fasterxml.jackson.core.sym.Name;
 
-/**
- * Created by jt on 1/10/17.
- */
+
+
 @Controller
 public class PatientController {
     private PatientService patientService;
 
-   /* private PatientToParientForm patientToPatientForm;
-
-    @Autowired
-    public void setPatientToPatientForm(PatientToPatientForm patientToPatientForm) {
-        this.patientToPatientForm = patientToPatientForm;
-    }
-    */
+  
 
     @Autowired
     public void setPatientService(PatientService patientService) {
@@ -51,7 +42,7 @@ public class PatientController {
     public String listPatient(Model model){
         System.out.println("Submit form 1");
         model.addAttribute("patients", patientService.listAll());
-        //model.addAttribute("patients", patientService.getByName(name));
+        
         return "patient/list";
     }
 
@@ -64,15 +55,6 @@ public class PatientController {
 
         
 
-/*
-    @RequestMapping("patient/edit/{id}")
-    public String edit(@PathVariable String id, Model model){
-        Patient patient = patientService.getById(id);
-        PatientForm patientForm = patientToPatientForm.convert(patient);
-
-        model.addAttribute("patientForm", patientForm);
-        return "patient/patientform";
-    }*/
 
     @RequestMapping("/patient/new")
     public String newPatient(Model model){
@@ -81,22 +63,12 @@ public class PatientController {
         return "patient/patientform";
     }
 
-    /*@RequestMapping("/patient/search")
-    public String newSearch(){
-        //model.addAttribute("searchName", new PatientForm());
-        return "patient/search";
-    }*/
+   
 
     @RequestMapping(value = "/patient/search")
     public String searchName(){
         System.out.println("Hi search");
-        //       Patient savedPatient = patientService.saveOrUpdatePatientForm(patientForm);
-
-        //model.addAttribute("patients", patientService.getByName(name));
-        
-        /*List<Patient> searched = new ArrayList<>();
-        searched = patientService.getByName(name);
-        System.out.println(searched);*/
+       
 
 
         return "/patient/search";
@@ -123,11 +95,6 @@ public class PatientController {
 
         return "redirect:/patient/show/" + savedPatient.getId();
     }
-/*
-    @RequestMapping("/product/delete/{id}")
-    public String delete(@PathVariable String id){
-        productService.delete(id);
-        return "redirect:/product/list";
-    }*/
+
 
 }
