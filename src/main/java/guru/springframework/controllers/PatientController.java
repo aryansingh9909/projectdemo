@@ -3,6 +3,7 @@ package guru.springframework.controllers;
 import guru.springframework.commands.PatientForm;
 //import guru.springframework.converters.PatientToPatientForm;
 import guru.springframework.domain.Patient;
+import guru.springframework.repositories.PatientRepository;
 import guru.springframework.services.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
+
+import com.fasterxml.jackson.core.sym.Name;
 
 /**
  * Created by jt on 1/10/17.
@@ -47,10 +50,11 @@ public class PatientController {
     @RequestMapping({"/patient/list", "/patient"})
     public String listPatient(Model model){
         System.out.println("Submit form 1");
-        //model.addAttribute("patients", patientService.listAll());
+        model.addAttribute("patients", patientService.listAll());
         //model.addAttribute("patients", patientService.getByName(name));
         return "patient/list";
     }
+
 
     @RequestMapping("/patient/show/{id}")
     public String getPatient(@PathVariable String id, Model model){
@@ -58,7 +62,7 @@ public class PatientController {
         return "patient/show";
     }
 
-    
+        
 
 /*
     @RequestMapping("patient/edit/{id}")
@@ -94,18 +98,20 @@ public class PatientController {
         searched = patientService.getByName(name);
         System.out.println(searched);*/
 
+
         return "/patient/search";
+
     }
 
-    @RequestMapping(value = "/Search")
-    public String search(){
-        System.out.println("6");
-            //model.addAttribute("patients", patientService.getByName(name));
-            //System.out.println("8");
-        return "redirect:/patient/list";
+    @GetMapping(value = "/Search")
+    public String search(@RequestParam(value = "Name") String name , Model model){
+        System.out.println(name);
+        model.addAttribute("patients", patientService.getByName(name));
+        System.out.println("8");
+        return "/patient/searchlist";
     }
     
-/*
+
     @RequestMapping(value = "/patient", method = RequestMethod.POST)
     public String saveOrUpdatePatient(@Valid PatientForm patientForm, BindingResult bindingResult){
         System.out.println("5");
@@ -116,7 +122,7 @@ public class PatientController {
         Patient savedPatient = patientService.saveOrUpdatePatientForm(patientForm);
 
         return "redirect:/patient/show/" + savedPatient.getId();
-    }*/
+    }
 /*
     @RequestMapping("/product/delete/{id}")
     public String delete(@PathVariable String id){

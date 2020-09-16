@@ -13,9 +13,9 @@ import java.math.BigDecimal;
 public class Patient {
     @Id
     private ObjectId _id;
-    private String Name;
-    private BigDecimal Age;
-    private String Gender;
+    private String name;
+    private BigDecimal age;
+    private String gender;
 
     public ObjectId getId() {
         return _id;
@@ -26,26 +26,26 @@ public class Patient {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public BigDecimal getAge() {
-        return Age;
+        return age;
     }
 
-    public void setAge(BigDecimal Age) {
-        this.Age = Age;
+    public void setAge(BigDecimal age) {
+        this.age = age;
     }
 
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
-    public void setGender(String Gender) {
-        this.Gender = Gender;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

@@ -58,9 +58,9 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public List<Patient> getByName(String name) {
+    public List<Patient> getByName(String Name) {
         List<Patient> patients = new ArrayList<>();
-        patients = patientRepository.findByName(name); 
+        patientRepository.getByName(Name).forEach(patients::add); 
         return patients;
     }
 

@@ -16,7 +16,7 @@ public interface PatientService {
 
     Patient saveOrUpdate(Patient patient);
 
-    List<Patient> getByName(String name);
+    List<Patient> getByName(String Name);
 
     void delete(String id);
 
