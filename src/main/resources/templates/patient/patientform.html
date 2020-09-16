@@ -4,11 +4,14 @@
 <title>Web Appilication for Patient</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <link rel="stylesheet" type="text/css" href="/css/patientform.css"/>
+<style>
 
+</style>
 </head>
 <body>
-<h1>Patient Details</h1>
+
 <div class="Patiententry">
+<h1 style="text-align:center">Patient Details</h1>
   <form class="form-horizontal" th:object="${patientForm}" th:action="@{/patient}" method="post">
     
     <div class="row">
@@ -35,7 +38,7 @@
         <input type="text" id="gender" name="gender" placeholder="Your gender..">
       </div>
     </div>
-    <div class="row">
+    <div class="btn">
       <button type="button button1">Submit</button>
     </div>
     <div>
