@@ -42,10 +42,10 @@ public class PatientController {
         this.patientService = patientService;
     }
 
-    /*@RequestMapping("/")
+    @RequestMapping("/")
     public String redirToList(){
         return "redirect:/patient/list";
-    }*/
+    }
 
     @RequestMapping({"/patient/list", "/patient"})
     public String listPatient(Model model){
