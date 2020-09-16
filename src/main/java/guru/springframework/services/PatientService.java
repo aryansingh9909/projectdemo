@@ -5,9 +5,7 @@ import guru.springframework.domain.Patient;
 
 import java.util.List;
 
-/**
- * Created by jt on 1/10/17.
- */
+
 public interface PatientService {
 
     List<Patient> listAll();

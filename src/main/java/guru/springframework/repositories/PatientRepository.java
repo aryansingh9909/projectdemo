@@ -10,5 +10,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface PatientRepository extends CrudRepository<Patient, String>{
 
-    List<Patient> getByName(String Name);
+    List<Patient> getByName(String Name);   
 }
