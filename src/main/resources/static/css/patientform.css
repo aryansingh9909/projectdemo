@@ -40,12 +40,14 @@ label {
     padding-left: 400px;
     padding-right: 400px;
     padding-bottom: 100px;
+    border: 1px solid black;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .col-25, .col-75, input[type=submit] {
     width: 40%;
+    height: 40%;
     padding-left: 400px;
     padding-bottom: 400px;
     padding-right: 400px;
